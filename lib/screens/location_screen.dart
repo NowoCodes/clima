@@ -67,17 +67,20 @@ class _LocationScreenState extends State<LocationScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  TextButton(
+                  TextButton.icon(
                     onPressed: () async {
                       var weatherData = await weather.getLocationWeather();
                       updateUI(weatherData);
                     },
-                    child: Icon(
-                      Icons.near_me,
-                      size: 50.0,
-                    ),
+                    style: TextButton.styleFrom(primary: Colors.white),
+                    icon: Icon(Icons.near_me, size: 50.0),
+                    label: null,
+                    // child: Icon(
+                    //   Icons.near_me,
+                    //   size: 50.0,
+                    // ),
                   ),
-                  TextButton(
+                  TextButton.icon(
                     onPressed: () async {
                       var typedName = await Navigator.push(
                         context,
@@ -93,10 +96,13 @@ class _LocationScreenState extends State<LocationScreen> {
                         updateUI(weatherData);
                       }
                     },
-                    child: Icon(
-                      Icons.location_city,
-                      size: 50.0,
-                    ),
+                    style: TextButton.styleFrom(primary: Colors.white),
+                    icon: Icon(Icons.location_city, size: 50.0),
+                    label: null,
+                    // child: Icon(
+                    //   Icons.location_city,
+                    //   size: 50.0,
+                    // ),
                   ),
                 ],
               ),
